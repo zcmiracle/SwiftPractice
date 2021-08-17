@@ -61,3 +61,51 @@ class Student1: Person1 {
 print(class_getInstanceSize(Student1.self))
 print(class_getSuperclass(Student1.self)!)
 print(class_getSuperclass(Person1.self)!)
+
+
+
+// Self 代表当前类型
+class Person2 {
+    var age = 1
+    static var count = 2
+    func run() {
+        print(self.age)
+        // 只能Person2.count 调用 类属性
+//        print(self.count)
+    }
+}
+print(Person2.count)
+
+// Self一般用作返回值类型，限定返回值跟方法调用这必须是同一类型（也可以作为参数类型）
+protocol Runnable {
+    func test() -> Self
+}
+
+class Person3: Runnable {
+    required init() {}
+    func test() -> Self { type(of: self).init() }
+}
+
+class Student2: Person3 {}
+
+var person3 = Person3()
+print(person3.test())
+
+var student2 = Student2()
+print(student2.test())
+
+
+
+
+// CaseIterable
+// 让枚举遵守 CaseIterable 协议，可以实现遍历枚举值
+enum Season : CaseIterable {
+    case sprint, summer, autumn, winter
+}
+
+let seasons = Season.allCases
+print(seasons.count)
+
+for season in seasons {
+    print(season)
+}
