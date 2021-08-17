@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AE24E1226CBF4710018AC49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE24E1126CBF4710018AC49 /* main.swift */; };
 		B33D597826CB9DC2007A94FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33D597726CB9DC2007A94FA /* AppDelegate.swift */; };
 		B33D597A26CB9DC2007A94FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33D597926CB9DC2007A94FA /* SceneDelegate.swift */; };
 		B33D597C26CB9DC2007A94FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33D597B26CB9DC2007A94FA /* ViewController.swift */; };
@@ -18,6 +19,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8AE24E0D26CBF4710018AC49 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		B33D59A326CBAC87007A94FA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8AE24E0F26CBF4710018AC49 /* 03_self_Type_AnyClass */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 03_self_Type_AnyClass; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE24E1126CBF4710018AC49 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B33D597426CB9DC2007A94FA /* SwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33D597726CB9DC2007A94FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B33D597926CB9DC2007A94FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8AE24E0C26CBF4710018AC49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B33D597126CB9DC2007A94FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,12 +97,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AE24E1026CBF4710018AC49 /* 03_self_Type_AnyClass */ = {
+			isa = PBXGroup;
+			children = (
+				8AE24E1126CBF4710018AC49 /* main.swift */,
+			);
+			path = 03_self_Type_AnyClass;
+			sourceTree = "<group>";
+		};
 		B33D596B26CB9DC2007A94FA = {
 			isa = PBXGroup;
 			children = (
 				B33D597626CB9DC2007A94FA /* SwiftPractice */,
 				B33D59A626CBAC87007A94FA /* 01_可选链 */,
 				B33D59C326CBB1F1007A94FA /* 02_协议 */,
+				8AE24E1026CBF4710018AC49 /* 03_self_Type_AnyClass */,
 				B33D597526CB9DC2007A94FA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +122,7 @@
 				B33D597426CB9DC2007A94FA /* SwiftPractice.app */,
 				B33D59A526CBAC87007A94FA /* 01_可选链 */,
 				B33D59C226CBB1F1007A94FA /* 02_协议 */,
+				8AE24E0F26CBF4710018AC49 /* 03_self_Type_AnyClass */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +160,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8AE24E0E26CBF4710018AC49 /* 03_self_Type_AnyClass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AE24E1326CBF4710018AC49 /* Build configuration list for PBXNativeTarget "03_self_Type_AnyClass" */;
+			buildPhases = (
+				8AE24E0B26CBF4710018AC49 /* Sources */,
+				8AE24E0C26CBF4710018AC49 /* Frameworks */,
+				8AE24E0D26CBF4710018AC49 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 03_self_Type_AnyClass;
+			productName = 03_self_Type_AnyClass;
+			productReference = 8AE24E0F26CBF4710018AC49 /* 03_self_Type_AnyClass */;
+			productType = "com.apple.product-type.tool";
+		};
 		B33D597326CB9DC2007A94FA /* SwiftPractice */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B33D598826CB9DC5007A94FA /* Build configuration list for PBXNativeTarget "SwiftPractice" */;
@@ -188,9 +234,12 @@
 		B33D596C26CB9DC2007A94FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					8AE24E0E26CBF4710018AC49 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					B33D597326CB9DC2007A94FA = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -218,6 +267,7 @@
 				B33D597326CB9DC2007A94FA /* SwiftPractice */,
 				B33D59A426CBAC87007A94FA /* 01_可选链 */,
 				B33D59C126CBB1F1007A94FA /* 02_协议 */,
+				8AE24E0E26CBF4710018AC49 /* 03_self_Type_AnyClass */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +286,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8AE24E0B26CBF4710018AC49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AE24E1226CBF4710018AC49 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B33D597026CB9DC2007A94FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,6 +342,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8AE24E1426CBF4710018AC49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HGF48S4DZC;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8AE24E1526CBF4710018AC49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HGF48S4DZC;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		B33D598626CB9DC5007A94FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -493,6 +577,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8AE24E1326CBF4710018AC49 /* Build configuration list for PBXNativeTarget "03_self_Type_AnyClass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE24E1426CBF4710018AC49 /* Debug */,
+				8AE24E1526CBF4710018AC49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B33D596F26CB9DC2007A94FA /* Build configuration list for PBXProject "SwiftPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

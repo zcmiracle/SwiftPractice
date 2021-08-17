@@ -6,7 +6,7 @@
 //
 
 // CustomStringConvertible 协议，可以自定义实例的打印字符串
-class Person: CustomStringConvertible {
+class Person: CustomStringConvertible, CustomDebugStringConvertible {
     var age : Int
     var name: String
     init(age: Int, name: String) {
@@ -14,20 +14,29 @@ class Person: CustomStringConvertible {
         self.name = name
     }
     
+    // description
     var description: String {
-        "age=\(age), name=\(name)"
+        "description: age=\(age), name=\(name)"
+    }
+    
+    // debugDescription
+    var debugDescription: String {
+        "debugDescription: age=\(age), name=\(name)"
     }
 }
 
 var person = Person(age: 10, name: "TiMi")
+// 调用的是 CustomStringConvertible 协议的 description
 print(person)
-
+// debugPrint调用的是 CustomDebugStringConvertible协议的 description
+debugPrint(person)
 
 
 
 // Any AnyObject
 // Any：可以代表任意类型（枚举、结构体、类、也包括函数类型）
-// AnyObject：可以代表任意类 类型（在协议后面写上：AnyObject代表只有类能遵守这个协议）
+// AnyObject：可以代表任意【类】类型（在协议后面写上：AnyObject代表只有类能遵守这个协议）
+// 在协议后面协商：class 也代表只有类能遵守这个协议
 var student : Any = 10
 student = "James"
 student = 20.5
@@ -42,7 +51,6 @@ data.append(3.14)
 data.append("James")
 data.append({ 100 }) // 函数
 data.append(Student())
-
 
 
 
@@ -68,7 +76,18 @@ print(stu is Person1) // true
 print(stu is Student1) // true
 print(stu is Runnable) // true
 
-
 // as用来做强制类型转换
 var stu2: Any = 10
 (stu2 as? Student1)?.study() // 没有调用study
+stu2 = Student1()
+(stu2 as? Student1)?.study() // Student1 study
+(stu2 as! Student1).study() // Student1 study
+(stu2 as? Student1)?.run() // Student1 run
+
+var data1 = [Any]()
+data1.append(Int("123") as Any)
+
+var data2 = 10 as Double
+print(data2) // 10.0
+
+
