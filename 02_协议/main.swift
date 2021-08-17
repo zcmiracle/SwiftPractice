@@ -5,7 +5,151 @@
 //  Created by XFB on 2021/8/17.
 //
 
-// CustomStringConvertible 协议，可以自定义实例的打印字符串
+/**
+ 协议可以用来定义方法、属性、下标的声明。协议可以被枚举、结构体、类遵守
+ 多个协议之间用逗号隔开
+ 协议中定义方法时候不能有默认参数
+ 默认情况下，协议中定义的内容必须全部都实现
+ */
+protocol Drawable {
+    func draw()
+    var x: Int { get set }
+    var y: Int { get }
+    subscript(index: Int) -> Int { get set }
+}
+
+protocol Test1 {}
+protocol Test2 {}
+protocol Test3 {}
+
+class TestClass: Test1, Test2, Test3 {}
+    
+/**
+ 协议中的属性
+ 协议中定义的属性必须是 var 关键字
+ 实现协议时的属性权限要不小于协议中定义的属性权限
+    协议定义get、set，用var存储属性或get、set计算属性去实现
+    协议定义get，用任何属性都可以实现
+ 
+ */
+
+class Person5: Drawable {
+    var x: Int = 0
+    var y: Int = 0
+    
+    func draw() {
+        print("Person5 draw")
+    }
+    
+    // 下标
+    subscript(index: Int) -> Int {
+        set {}
+        get { index }
+    }
+}
+
+class Person6: Drawable {
+    var x: Int {
+        get { 0 }
+        set {}
+    }
+    var y: Int { 0 }
+    func draw() {
+        print("Person6 draw")
+    }
+
+    // 下标
+    subscript(index: Int) -> Int {
+        set {}
+        get { index }
+    }
+}
+
+
+/**
+ static/class
+ 为了保证通用，协议中必须用static定义类型方法、类型属性、类型下标
+ */
+
+protocol Drawable2 {
+    static func draw()
+}
+
+class Person8: Drawable2 {
+    class func draw() {
+        print("Person8 draw")
+    }
+}
+
+class Person9: Drawable2 {
+    static func draw() {
+        print("Person8 draw")
+    }
+}
+
+
+/**
+ mutating
+ 只有将协议中的实例方法标记为mutating
+    才允许结构体、枚举的具体实现修改自身内存
+    类在实现方法时不用加mutating，枚举、结构体才需要加mutatin
+ */
+
+protocol Drawable3 {
+    mutating func draw()
+}
+
+class Size3: Drawable3 {
+    var width: Int = 0
+    func draw() {
+        width = 10
+    }
+}
+
+struct Point3: Drawable3 {
+    var x: Int = 0
+    mutating func draw() {
+        x = 10
+    }
+}
+
+/**
+ init init? init!
+ 协议中定义的init? init! 可以用init、init? init! 去实现
+ 协议中定义的init，可以用init、init! 去实现
+ */
+protocol Liveable {
+    init()
+    init?(age: Int)
+    init!(no: Int)
+}
+
+class Person10: Liveable {
+    required init() {}
+    required init?(age: Int) {}
+    required init!(no: Int) {}
+}
+    
+/**
+ 协议组合
+ 协议组合，可以包含1个类类型
+ */
+protocol Liveable1 {}
+protocol Runnable5 {}
+class Person11 {}
+
+func fn0(obj: Person) {}
+func fn1(obj: Liveable1) {}
+func fn2(obj: Liveable1 & Runnable5) {}
+func fn3(obj: Person & Liveable1 & Runnable5) {}
+
+typealias RealPerson = Person & Liveable1 & Runnable5
+func fn4(obj: RealPerson) {}
+
+
+/**
+ CustomStringConvertible 协议，可以自定义实例的打印字符串
+ */
 class Person: CustomStringConvertible, CustomDebugStringConvertible {
     var age : Int
     var name: String
